@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="container mx-auto">
     <header class="container mx-auto">
             <!-- navbar start here -->
             <div class="navbar bg-base-100">
@@ -74,12 +74,13 @@
                </div>
     </header>
     <main>
+        <!-- posts section -->
         <section>
             <div  class="text-center mt-20">
                 <h1 class="text-4xl font-black text-[#12132D]">Let’s Discuss</h1>
                 <p class="font-medium text-xl mt-6">Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined .</p>
             </div>
-     <div class="flex items-start">
+     <div class="lg:flex items-start">
         <div id="posts-container" class="mt-10 ">
             <!-- <div>
                 <div class="card card-side bg-[#797DFC1A] shadow-xl">
@@ -130,6 +131,19 @@
         </div> 
         
      </div>
+        </section>
+        <!-- Join Our Forum section -->
+        <section>
+            <div class="bg-[url(./images/rectangle1.png)] bg-cover bg-center bg-no-repeat w-full rounded-[32px] lg:flex justify-around mt-24">
+                <div class="p-4 lg:p-[90px]"> 
+                    <h1 class="font-black text-4xl text-white">Join Our Forum</h1>
+                    <p class="text-[#FFFFFFCC] font-normal text-xl py-1 lg:py-4">rasel is a vibrant online community dedicated to [briefly describe the main theme or focus of your forum]. Whether you're a seasoned expert or a curious newcomer</p>
+                    <button class="btn rounded-full bg-[#797DFC] text-white text-xl font-semibold ">Registered Now</button>
+                </div>
+                <div class="p-4 lg:p-24">
+                    <img src="images/joinforum.png " alt="">
+                </div>
+            </div>
         </section>
     </main>
     <footer>

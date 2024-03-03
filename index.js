@@ -14,14 +14,14 @@ const displayPost=posts => {
         // postCard.classList.add('post-card');
         postCard.innerHTML = `
         <div  ">
-                    <div>
-                        <div class="card card-side bg-[#797DFC1A] shadow-xl">
-                            <div class="relative ">
-                            <figure><img class="lg:p-10"  src="${post?.image}" alt="Movie"/></figure>
+                    <div class="item-start">
+                        <div class="card lg:card-side bg-[#797DFC1A] shadow-xl">
+                            <div class="relative  lg:p-10 ">
+                            <figure><img class=" lg:h-[72px] lg:w-[72px]"  src="${post?.image}" alt="Movie"/></figure>
                             <img class="absolute lg:p-10 -top-2 right-0" src="images/status.png" alt="">
                             </div>
                             <div class="card-body">
-                        <div>
+                         <div>
                             </div>
                                 <div class="flex">
                                     <p>#${post?.category}</p>
@@ -31,11 +31,11 @@ const displayPost=posts => {
                               <p>${post?.description}</p>
                               <hr class="h-px mx-8 bg-gray-200 border-9 ">
                               <div class="flex items-center justify-between pt-6">
-                                <div class="flex gap-9">
-                                    <div class="flex gap-4"><img src="images/vector1.png" alt=""><span>560</span></div>
+                                <div class="flex gap-2 lg:gap-9">
+                                    <div class="flex gap-1 lg:gap-4"><img src="images/vector1.png" alt=""><span>${post?.comment_count}</span></div>
                                     
-                                    <div class="flex gap-4"><img src="images/vector2.png" alt=""><span>1,568</span></div>
-                                    <div class="flex gap-4"><img src="images/vector.png" alt=""><span> 5 min</span></div>
+                                    <div class="flex gap-1 lg:gap-4"><img src="images/vector2.png" alt=""><span>${post?.view_count}</span></div>
+                                    <div class="flex gap-1 lg:gap-4"><img src="images/vector.png" alt=""><span> ${post?.posted_time}M</span></div>
                                    </div>
                                    <div class="card-actions justify-end">
                                      <img src="images/vector3.png" alt="">
