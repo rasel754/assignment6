@@ -7,9 +7,9 @@ const loadData= async () => {
 
 const displayPost=posts => {
 
-    const phoneContainer=document.getElementById('posts-container');
+    const postContainer=document.getElementById('posts-container');
     posts.forEach(post => {
-        console.log(post);
+        // console.log(post);
         const postCard= document.createElement('div');
         // postCard.classList.add('post-card');
         postCard.innerHTML = `
@@ -47,8 +47,54 @@ const displayPost=posts => {
                     
                 </div>
         `
-        phoneContainer.appendChild(postCard);
+        postContainer.appendChild(postCard);
     });
    
 };
+const latestPost=async () => {
+    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await response.json();
+   console.log(data);
+    displayLatestPosts(data);
+    
+    
+}
+
+const displayLatestPosts =latest => {
+    const latestPosts = document.getElementById('Latest-post-container');
+    latest.forEach(post => {
+        console.log(post);
+        const latestPostCard= document.createElement('div');
+        const getId= post.id;
+        latestPostCard.innerHTML =`
+        <div class="card card-compact w-96 bg-gray-100 shadow-xl">
+                    <figure><img class="p-6" src="${post.cover_image}" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <div class="flex items-center">
+                            <img src="images/frame32.png" alt=""> <span class="text-xl font-normal text-[#12132D99]">${post?.author?.
+                                posted_date}</span>
+                        </div>
+                      <h2 class="card-title">${post.title}</h2>
+                      <p class="text-xl font-normal text-[#12132D99]">${post.description}</p>
+                      <div class="card-actions gap-4">
+                       <img class="h-11 w-11 rounded-full	" src="${post.profile_image}" alt="">
+                       <div>
+                        <h1 class="text-[#12132D] font-bold">${post?.author?.name}</h1>
+                        <p class="text-xl font-normal text-[#12132D99]"> ${post?.author?.designation} </p>
+                       </div>
+                       <div>
+                        <h1></h1>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+        `
+        latestPosts.appendChild(latestPostCard);
+
+    });
+}
+
+// displayLatestPosts =document.getElementById('Latest-post-container');
+
+latestPost();
 loadData();
