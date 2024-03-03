@@ -38,7 +38,7 @@ const displayPost=posts => {
                                     <div class="flex gap-1 lg:gap-4"><img src="images/vector.png" alt=""><span> ${post?.posted_time}M</span></div>
                                    </div>
                                    <div class="card-actions justify-end">
-                                     <img src="images/vector3.png" alt="">
+                                     <img onclick="check('${post?.title}','${post?.view_count}')" src="images/vector3.png" alt="">
                                    </div>
                               </div>
                             </div>
@@ -92,6 +92,25 @@ const displayLatestPosts =latest => {
         latestPosts.appendChild(latestPostCard);
 
     });
+}
+const check =(data,data2)=>{
+    const takeData =document.getElementById('check-Container');
+    const appendData = document.createElement('div');
+    appendData.innerHTML=`
+    <div  class="flex w-[326px] h-[82px] bg-[#FFFFFF] gap-3 items-center rounded-3xl mx-3 p-2">
+    <div>
+        <h1 class="text-[#12132D ] font-semibold text-xl ">${data} </h1>
+    </div>
+    <div class="flex items-center justify-end">
+        <img src="images/vector2.png" alt="">
+        <p  class="font-normal text-[#12132D99]">${data2}</p>
+    </div>
+</div>
+                        `
+                        takeData.appendChild(appendData);
+
+
+    
 }
 
 // displayLatestPosts =document.getElementById('Latest-post-container');
