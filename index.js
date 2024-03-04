@@ -107,7 +107,8 @@ const check =(data,data2)=>{
     </div>
 </div>
                         `
-                        takeData.appendChild(appendData);
+ takeData.appendChild(appendData);
+ 
 
 
     
